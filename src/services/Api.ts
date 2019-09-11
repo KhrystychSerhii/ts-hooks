@@ -9,22 +9,13 @@ const getUser = (login: string) => {
     return http.get(undefined, `/users/${login}`);
 };
 
-const login = (user: AuthActionPayload) => {
-    return http.get('','/users', {})
-};
+const login = (user: AuthActionPayload) => http.get('','/users', {});
 
-const getRepos = (login: string) => {
-    console.log('getRepos', login);
-    return http.get(undefined,`/users/${login}/repos`);
-};
+const getRepos = (login: string) => http.get(undefined,`/users/${login}/repos`);
 
-const getFollowers = (login: string) => {
-    return http.get(undefined,`/users/${login}/followers`);
-};
+const getFollowers = (login: string) => http.get(undefined,`/users/${login}/followers`);
 
-const search = (q: string, what: 'users' | 'repositories') => {
-    return http.get(undefined, `/search/${what}`, { params: { q }})
-};
+const search = (q: string, what: 'users' | 'repositories') => http.get(undefined, `/search/${what}`, { params: { q }});
 
 export {
     getUsers,
